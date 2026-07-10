@@ -1,0 +1,15 @@
+{
+  "name": "birria-patro-jaramillo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Birria Patro Jaramillo — static site + Maya chat widget backend",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

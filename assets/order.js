@@ -118,17 +118,20 @@ function setOrderType(type) {
   });
   const pickupFields = document.getElementById("pickupFields");
   const deliveryFields = document.getElementById("deliveryFields");
+  const deliveryAddress = document.getElementById("deliveryAddress");
   const est = document.getElementById("orderEst");
   const payNote = document.querySelector(".pay-note span");
 
   if (type === "pickup") {
     pickupFields.style.display = "block";
     deliveryFields.style.display = "none";
+    if (deliveryAddress) deliveryAddress.required = false;
     est.innerHTML = "<strong>Ready in ~15 min</strong> · Pickup is free";
     payNote.textContent = "Pay at pickup — cash or card accepted at the counter.";
   } else {
     pickupFields.style.display = "none";
     deliveryFields.style.display = "block";
+    if (deliveryAddress) deliveryAddress.required = true;
     est.innerHTML = "<strong>35–50 min</strong> · Delivery is $5.99";
     payNote.textContent = "Pay at delivery — cash or card accepted from the driver.";
   }
@@ -136,12 +139,15 @@ function setOrderType(type) {
 }
 
 /* ===================== SUBMIT ===================== */
+const MAYA_ORDER_ENDPOINT = "https://web-production-221fd.up.railway.app/api/orders/website";
+const MAYA_RESTAURANT_ID = "birria_patro_jaramillo";
+
 function generateOrderNumber() {
   const digits = Math.floor(100000 + Math.random() * 900000);
   return `BPJ-${digits}`;
 }
 
-function handleSubmit(e) {
+async function handleSubmit(e) {
   e.preventDefault();
   const cart = getCart();
   if (!cart.length) return;
@@ -150,9 +156,10 @@ function handleSubmit(e) {
   const phone = document.getElementById("custPhone").value.trim();
   if (!name || !phone) return;
 
+  let deliveryAddress = "";
   if (orderType === "delivery") {
-    const addr = document.getElementById("deliveryAddress").value.trim();
-    if (!addr) {
+    deliveryAddress = document.getElementById("deliveryAddress").value.trim();
+    if (!deliveryAddress) {
       document.getElementById("deliveryAddress").focus();
       return;
     }
@@ -162,8 +169,46 @@ function handleSubmit(e) {
   const tax = round2(subtotal * TAX_RATE);
   const deliveryFee = orderType === "delivery" ? DELIVERY_FEE : 0;
   const total = round2(subtotal + tax + SERVICE_FEE + deliveryFee);
-
   const orderNum = generateOrderNumber();
+
+  const placeBtn = document.getElementById("placeOrderBtn");
+  const originalBtnText = placeBtn.textContent;
+  placeBtn.disabled = true;
+  placeBtn.textContent = "Placing order...";
+
+  const payload = {
+    orderId: orderNum,
+    restaurant_id: MAYA_RESTAURANT_ID,
+    source: "website",
+    customer: { name, phone },
+    items: cart.map((line) => ({
+      name: line.name,
+      quantity: line.qty,
+      price: round2(line.basePrice + (line.extraPerUnit || 0)),
+      modifiers: line.optionsLabel ? line.optionsLabel.split(", ").filter(Boolean) : [],
+    })),
+    subtotal,
+    total,
+    pickupTime: orderType === "pickup" ? "ASAP" : "",
+    deliveryAddress: orderType === "delivery" ? deliveryAddress : "",
+    paymentMethod: "",
+  };
+
+  try {
+    const res = await fetch(MAYA_ORDER_ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+    if (!res.ok) throw new Error(await res.text());
+  } catch (err) {
+    console.error("Order submission failed:", err);
+    placeBtn.disabled = false;
+    placeBtn.textContent = originalBtnText;
+    alert("Sorry, we couldn't submit your order — please try again, or call us directly.");
+    return;
+  }
+
   document.getElementById("confirmOrderNum").textContent = orderNum;
   document.getElementById("confirmType").textContent =
     orderType === "pickup" ? "Pickup order — ready in ~15 min" : "Delivery order — arriving in 35–50 min";
@@ -184,6 +229,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   });
   document.getElementById("checkoutForm").addEventListener("submit", handleSubmit);
 
+  setOrderType(orderType); // ensure deliveryAddress isn't required on the default pickup view
   renderAll();
 
   try {
