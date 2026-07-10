@@ -1,0 +1,6 @@
+.vercel
+.DS_Store
+node_modules
+
+# Local design-research screenshots (not part of the site itself, and 50MB+ of PNGs)
+comparison/

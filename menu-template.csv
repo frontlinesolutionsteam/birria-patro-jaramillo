@@ -1,0 +1,43 @@
+category,name,description,price,available,customizable
+Birria Tacos,Birria Taco Dorado Combo Revolcada (3),"3 grilled birria tacos with charred onions, cheese, cilantro, salsa. Includes 8oz consomé.",17.99,TRUE,TRUE
+Birria Tacos,Birria Tacos Dorados Combo Normal (3),"3 classic birria tacos with cheese, onion, cilantro, salsa. Includes 8oz consomé.",17.99,TRUE,TRUE
+Birria Tacos,Tacos Dorados Carne Asada (3),"3 crispy carne asada tacos with cheese, onion, cilantro, salsa. Includes 8oz consomé. Tortillas dipped in lamb lard.",18.99,TRUE,TRUE
+Birria Tacos,Taco Suave / Soft Taco,"Choice of meat, onions, cilantro, salsa.",4.49,TRUE,TRUE
+Birria Tacos,Taco Crispy / Crispy Taco,"Choice of meat, onions, cilantro, salsa, in a crispy shell.",4.49,TRUE,TRUE
+Birria Plates,Plato Birria Normal / Normal Birria Plate,"Steamed birria plate. Includes 12oz consomé, 5 tortillas, onions, cilantro.",17.99,TRUE,TRUE
+Birria Plates,Plato Birria Revolcada / Grilled Lamb Plate,"Grilled birria plate with charred onions. Includes 12oz consomé, 5 tortillas, onions, cilantro.",17.99,TRUE,TRUE
+Birria Plates,Libra Normal (1lb) / Normal Pound,"1 lb steamed birria. Includes 32oz consomé, 10 tortillas, onions, cilantro on the side.",31.99,TRUE,TRUE
+Birria Plates,Libra Revolcada / Grilled Lamb Per Pound,"1 lb grilled birria with charred onions. Includes 32oz broth, 10 tortillas.",34.49,TRUE,TRUE
+Birria Plates,Consomé (Small),"Rich birria broth, served hot.",6.49,TRUE,FALSE
+Birria Plates,"Consomé (Large, 32oz)","More broth than meat, plus rice and 4 tortillas.",17.99,TRUE,FALSE
+Burritos,Super Burrito / Super Burrito,"Choice of meat, rice, whole beans, guacamole, cheese, sour cream, pico de gallo.",14.49,TRUE,TRUE
+Burritos,Burrito Regular / Regular Burrito,"Choice of meat, rice, whole beans, onions, cilantro, salsa.",12.99,TRUE,TRUE
+Burritos,Burrito Vegetariano / Vegetarian Burrito,"Rice, whole beans, sour cream, cheese, guacamole, lettuce, pico de gallo.",11.99,TRUE,TRUE
+Quesadillas,Quesabirria (3),"3 birria quesadillas, melted cheese, served with consomé for dipping.",14.99,TRUE,TRUE
+Quesadillas,Quesadilla Regular,"Choice of meat, cheese, onions, cilantro, salsa.",10.99,TRUE,TRUE
+Tostadas,Tostada,"Choice of meat, beans, cheese, crema, lettuce, pico de gallo, avocado.",6.49,TRUE,TRUE
+Nachos,Nachos,"Crispy tortilla chips loaded with cheese, choice of meat, and all the fixings.",13.99,TRUE,TRUE
+Nachos,Nachos Fries / Fries Nachos,"Crispy fries loaded with cheese, choice of meat, and all the fixings.",14.99,TRUE,TRUE
+Mariscos,Ceviche de Camarón / Shrimp Ceviche,"Fresh shrimp ceviche, citrus-cured with pico de gallo.",6.49,TRUE,TRUE
+Mariscos,Shrimp Burrito,"Flour coated deep fried shrimp, red cabbage, pico de gallo, cucumber, house dressing, whole beans, rice, cheese, avocado.",14.99,TRUE,TRUE
+Breakfast,Huevos con Chorizo / Eggs & Chorizo,"Served with rice, beans, chorizo, tortillas, and eggs.",10.99,TRUE,TRUE
+Breakfast,Desayuno con Huevos / Breakfast with Eggs,"Served with 2 eggs, rice, and beans.",9.99,TRUE,TRUE
+Menudo,Menudo,"Traditional Mexican soup made with cow's stomach in broth with red chili pepper base. Weekends only.",17.99,TRUE,FALSE
+Especiales,The Full Patro Experience (Party Pack),"4 handmade tortillas, birria normal, birria revolcada, flour quesadilla, 3 quesabirrias with cheese, 2 medium consomés, salsa, diced onion, cilantro, fresh limes.",,TRUE,FALSE
+Especiales,Birria Pizza,"6 generous slices, perfect for two. Comes with 2 small consomés for dipping, onion, cilantro, fresh limes.",,TRUE,FALSE
+Sides,Arroz / Rice,Mexican-style rice.,3.49,TRUE,FALSE
+Sides,Frijoles / Beans,Whole or refried beans.,3.49,TRUE,FALSE
+Sides,Guacamole,Fresh house-made guacamole.,3.49,TRUE,FALSE
+Sides,Chips y Salsa,Crispy tortilla chips with fresh salsa.,,TRUE,FALSE
+Sides,Extra Consomé 8oz,Extra cup of rich birria broth.,1.50,TRUE,FALSE
+Sides,Extra Tortillas (5),5 additional tortillas.,2.00,TRUE,FALSE
+Sides,Avocado,Fresh sliced avocado.,1.00,TRUE,FALSE
+Kids,Kids Bean and Cheese Burrito,"Bean and cheese burrito, comes with fries.",7.99,TRUE,FALSE
+Kids,Kids Taco,"Choice of meat, simple and mild.",4.49,TRUE,TRUE
+Kids,Kids Quesadilla,Melted cheese quesadilla.,5.99,TRUE,FALSE
+Dessert,Flan,"Rich, creamy flan — customers say it tastes ""almost like crème brûlée.""",4.99,TRUE,FALSE
+Drinks,Horchata Grande / Large Horchata,"House-made horchata, large size.",5.99,TRUE,FALSE
+Drinks,Horchata Regular,"House-made horchata, regular size.",3.99,TRUE,FALSE
+Drinks,Agua Fresca,"Refreshing fruit water, ask for today's flavor.",3.99,TRUE,FALSE
+Drinks,Jarritos,"Assorted flavors, Mexican bottled soda.",2.99,TRUE,FALSE
+Drinks,Bottled Water,,1.50,TRUE,FALSE
